@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="WebTour.css">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="WebTourInstance.showTourPlayer()">Init Demo</button>
+
+    <div id="targetID"  onclick="console.log('Alerta Valida Click Autonomo Div 1')" style="height: 100px;width: 100px;background-color: burlywood; border: 1px solid black; margin-bottom: 10px;position: absolute; top:0px; left:200px;"></div>
+    <div id="targetID2" onclick="console.log('Alerta Valida Click Autonomo Div 2')" style="height: 100px;width: 100px;background-color: burlywood; border: 1px solid black; margin-bottom: 10px;position: absolute; top:0px; right:0px;"></div>
+    <div id="targetID3" onclick="console.log('Alerta Valida Click Autonomo Div 3')" style="height: 100px;width: 100px;background-color: burlywood; border: 1px solid black; margin-bottom: 10px;position: absolute; bottom:0px; left:0px;"></div>
+    <div id="targetID4" onclick="console.log('Alerta Valida Click Autonomo Div 4')" style="height: 100px;width: 100px;background-color: burlywood; border: 1px solid black; margin-bottom: 10px;position: absolute; bottom:0px; right:0px;"></div>
+    <div id="targetID5" onclick="console.log('Alerta Valida Click Autonomo Div 5')" style="height: 100px;width: 100px;background-color: burlywood; border: 1px solid black; margin-bottom: 10px;position: absolute; bottom:50vh; right:50vw;"></div>
+
+    <webtour-step 
+        step-number="1" 
+        step-title="titulo" 
+        step-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, dignissimos blanditiis sed itaque explicabo nesciunt hic officiis nulla inventore obcaecati quos enim fuga consectetur eveniet, ipsum maiores quibusdam molestias expedita"
+        step-target="targetID" 
+        step-event="click"
+        step-eventtarget="targetID2">     
+    </webtour-step>
+    <webtour-step 
+            step-target="targetID2" 
+            step-event="click"
+            step-eventtarget="targetID3"
+            step-number="2" 
+            step-title="titulo" 
+            step-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, dignissimos blanditiis sed itaque explicabo nesciunt hic officiis nulla inventore obcaecati quos enim fuga consectetur eveniet, ipsum maiores quibusdam molestias expedita">
+    </webtour-step>
+    <webtour-step 
+        step-target="targetID3" 
+        step-event="click"
+        step-eventtarget="targetID4"
+        step-number="3" 
+        step-title="titulo" 
+        step-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, dignissimos blanditiis sed itaque explicabo nesciunt hic officiis nulla inventore obcaecati quos enim fuga consectetur eveniet, ipsum maiores quibusdam molestias expedita">
+    </webtour-step>
+    <webtour-step 
+        step-target="targetID4" 
+        step-event="click"
+        step-eventtarget="targetID5"
+        step-number="4" 
+        step-title="titulo" 
+        step-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, dignissimos blanditiis sed itaque explicabo nesciunt hic officiis nulla inventore obcaecati quos enim fuga consectetur eveniet, ipsum maiores quibusdam molestias expedita">
+    </webtour-step>
+    <webtour-step 
+        step-target="targetID5" 
+        step-event="click"
+        step-eventtarget="targetID"
+        step-number="5" 
+        step-title="titulo" 
+        step-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, dignissimos blanditiis sed itaque explicabo nesciunt hic officiis nulla inventore obcaecati quos enim fuga consectetur eveniet, ipsum maiores quibusdam molestias expedita">
+    </webtour-step>
+</body>
+<script src="./WebTour.js"></script>
+<script>
+    var WebTourInstance = new WebTour({ title : "Tour Inicial Largo Estado Claro", duration : 1500, order : ["1", "2", "3", "4", "5"] });
+</script>
+</html>
